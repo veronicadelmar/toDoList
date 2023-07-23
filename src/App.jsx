@@ -1,16 +1,27 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/Header'
+import FormContainer from './components/FormContainer'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // variables
+  const [tasks, setTasks] = useState ([])
+  const [option, setOption] = useState ("")
+  // funtions
+  function addTask(task){
+    setTasks([...tasks, task])
+  }
+  function filter(select){
+    setOption([select])
+  }
+
+
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      {console.log(tasks)}
+      <Header/>
+      <FormContainer addTask={addTask} filter={filter}/>
     </>
   )
 }
