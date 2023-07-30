@@ -1,17 +1,16 @@
 import { useState } from "react"
 import Card from "./Card"
 
-export default function ContainCard({tasks, option}){
+export default function ContainCard({tasks, option, deleteTask, changeTask}){
 
     const filteredTask = tasks.filter(task => task.condition == option)
     
-   
     return(
         <section>
         {filteredTask &&
-            filteredTask.map((task) => {
+            filteredTask.map((task, index) => {
                 return(
-                    <Card title={task.title}/>
+                    <Card key={index} title={task.title} id={task.id} deleteTask={deleteTask} changeTask={changeTask}/>
                 )
             })
         }
