@@ -15,7 +15,7 @@ function App() {
     setTasks([...tasks, task])
   }
   function filter(select){
-    setOption([select])
+    setOption(select)
   }
   function deleteTask(id){
     const updatedTasks = tasks.filter(task => task.id !== id)
@@ -35,8 +35,6 @@ function App() {
 
     localStorage.setItem("tasks", JSON.stringify(updatedTasks))
     setTasks(updatedTasks)
-
-    console.log(taskId)
   }
 
   return (

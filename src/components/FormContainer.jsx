@@ -1,10 +1,28 @@
 import React, {useState} from "react"
 export default function FormContainer({addTask, filter}){
-
+    // states
     const [task, setTask] = useState({
         condition: "incompleted",
         title: ""
     })
+    const [alert, setAlert] = useState(false)
+    //funtion
+    function validate(){
+        if(task.title === ""){
+            setAlert(true)
+            setTimeout(() => {
+                setAlert(false)
+            }, 3000)
+        } else {
+            addTask(task)
+            setTask(
+                {
+                    condition: "incompleted",
+                    title: ""
+                }
+            )
+        }
+    }
     // event input
     function handleChange(e){
         const value = e.target.value;
@@ -24,7 +42,7 @@ export default function FormContainer({addTask, filter}){
     return <form
         onSubmit={(e)=>{
             e.preventDefault();
-            addTask(task)
+            validate()
         }}
     >
         <div>
@@ -42,5 +60,6 @@ export default function FormContainer({addTask, filter}){
         <div>
             <button type="submit">SEND</button>
         </div>
+        {alert && <p>El campo no puede estar vacio.</p>}
     </form>
 }

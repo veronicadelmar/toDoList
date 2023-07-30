@@ -3,7 +3,7 @@ import Card from "./Card"
 
 export default function ContainCard({tasks, option, deleteTask, changeTask}){
 
-    const filteredTask = tasks.filter(task => task.condition == option)
+    const filteredTask = option === "" ? tasks : tasks.filter(task => task.condition === option)
     
     return(
         <section>
