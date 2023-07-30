@@ -6,7 +6,7 @@ export default function ContainCard({tasks, option, deleteTask, changeTask}){
     const filteredTask = option === "" ? tasks : tasks.filter(task => task.condition === option)
     
     return(
-        <section className="my-10">
+    <section className="my-10">
         {filteredTask &&
             filteredTask.map((task, index) => {
                 return(

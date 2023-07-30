@@ -1,6 +1,6 @@
 import check from '../assets/check.png'
 import eliminate from '../assets/eliminate.png'
-
+import xdBlack from '../assets/xd-black.png'
 
 export default function Card({title, id, deleteTask, changeTask}){
     //funtions
@@ -12,13 +12,16 @@ export default function Card({title, id, deleteTask, changeTask}){
     }
     return(
         <section className="flex justify-center gap-4 mb-4">
+            <figure>
+                <img src={xdBlack} alt="xD" className='w-9'/>
+            </figure>
             <p className='p-2 bg-[#fff] rounded'>{title}</p>
             <div className='flex gap-2'>
                 <button onClick={handleChange}>
-                    <img src={check} alt="Check" className='w-7' />
+                    <img src={check} alt="Check" className='w-7'/>
                 </button>
                 <button onClick={handleDelete}>
-                    <img src={eliminate} alt="Delete" className='w-7' />
+                    <img src={eliminate} alt="Delete" className='w-7'/>
                 </button>
             </div>
         </section>

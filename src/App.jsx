@@ -4,6 +4,7 @@ import DarkModeToggle from './components/DarkModeToggle'
 import Header from './components/Header'
 import FormContainer from './components/FormContainer'
 import ContainCard from './components/ContainCard'
+import Footer from './components/Footer'
 
 function App() {
   // variables
@@ -43,6 +44,7 @@ function App() {
       <Header/>
       <FormContainer addTask={addTask} filter={filter}/>
       <ContainCard tasks={tasks} option={option} deleteTask={deleteTask} changeTask={changeTask}/>
+      <Footer/>
     </section>
   )
 }
