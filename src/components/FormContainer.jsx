@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 export default function FormContainer({addTask, filter}){
-    // task  setTask
-    const [input, setInput] = useState({
+
+    const [task, setTask] = useState({
         condition: "incompleted",
         title: ""
     })
@@ -10,9 +10,10 @@ export default function FormContainer({addTask, filter}){
         const value = e.target.value;
         const name = e.target.name;
 
-        setInput({
-            ...input,
+        setTask({
+            ...task,
             [name]: value,
+            id: crypto.randomUUID(),
         })
     }
     // event select
@@ -23,12 +24,12 @@ export default function FormContainer({addTask, filter}){
     return <form
         onSubmit={(e)=>{
             e.preventDefault();
-            addTask(input)
+            addTask(task)
         }}
     >
         <div>
             <label>Task</label>
-            <input name="title" value={input.title} onChange={handleChange} type="text" placeholder="Enter a task"/>
+            <input name="title" value={task.title} onChange={handleChange} type="text" placeholder="Enter a task"/>
         </div>
         <div>
             <label>Select</label>
