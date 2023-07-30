@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import DarkModeToggle from './components/DarkModeToggle'
 import Header from './components/Header'
 import FormContainer from './components/FormContainer'
 import ContainCard from './components/ContainCard'
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <>
+      <DarkModeToggle/>
       <Header/>
       <FormContainer addTask={addTask} filter={filter}/>
       <ContainCard tasks={tasks} option={option}/>
