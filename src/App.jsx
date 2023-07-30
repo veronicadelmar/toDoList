@@ -38,12 +38,12 @@ function App() {
   }
 
   return (
-    <>
+    <section className='bg-gradient-to-b from-[#ba4753] to-[#e87785]'>
       <DarkModeToggle/>
       <Header/>
       <FormContainer addTask={addTask} filter={filter}/>
       <ContainCard tasks={tasks} option={option} deleteTask={deleteTask} changeTask={changeTask}/>
-    </>
+    </section>
   )
 }
 
