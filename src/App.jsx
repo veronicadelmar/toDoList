@@ -38,7 +38,7 @@ function App() {
   }
 
   return (
-    <section className='bg-[#ba4753] dark:bg-[#f8ced7]'>
+    <section className='bg-[#ba4753] dark:bg-[#f8ced7] font-mono'>
       <DarkModeToggle/>
       <Header/>
       <FormContainer addTask={addTask} filter={filter}/>
