@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import DarkModeToggle from './components/DarkModeToggle'
 import Header from './components/Header'
 import FormContainer from './components/FormContainer'
@@ -39,7 +38,7 @@ function App() {
   }
 
   return (
-    <section className='bg-gradient-to-b from-[#ba4753] to-[#e87785]'>
+    <section className='bg-gradient-to-b from-[#ba4753] to-[#f8ced7] dark:from-[#f8ced7] dark:to-[#ba4753]'>
       <DarkModeToggle/>
       <Header/>
       <FormContainer addTask={addTask} filter={filter}/>

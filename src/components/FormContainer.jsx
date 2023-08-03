@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 
 export default function FormContainer({addTask, filter}){
     // states
@@ -7,27 +7,32 @@ export default function FormContainer({addTask, filter}){
         title: ""
     })
     const [alert, setAlert] = useState(false)
+    const [demand, setDemand] = useState(false)
     //funtion
-    function validate(){
-        if(task.title === ""){
-            setAlert(true)
-            setTimeout(() => {
-                setAlert(false)
-            }, 3000)
-        } else {
-            addTask(task)
-            setTask(
-                {
+    function validate() {
+        task.title === "" ? (
+                setAlert(true),
+                setTimeout(() => {
+                    setAlert(false);
+                }, 3000)
+            ) : task.title.length < 5 ? (
+                setDemand(true),
+                setTimeout(() => {
+                    setDemand(false);
+                }, 3000)
+            ) : (
+                addTask(task),
+                setTask({
                     condition: "incompleted",
                     title: ""
-                }
+                })
             )
-        }
     }
+
     // event input
     function handleChange(e){
-        const value = e.target.value;
-        const name = e.target.name;
+        const value = e.target.value
+        const name = e.target.name
 
         setTask({
             ...task,
@@ -43,14 +48,16 @@ export default function FormContainer({addTask, filter}){
     return(
         <form className="mt-8"
             onSubmit={(e)=>{
-                e.preventDefault();
+                e.preventDefault()
                 validate()
             }}
         >
             <section className="flex flex-col gap-6 mb-8 ml-20 md:flex-row md:justify-center">
                 <div>
                     <label className="mr-3 text-lg lg:text-xl">Task</label>
+                    {/* validar el input, mayor a cantidad de letras, que no sean repetidas */}
                     <input name="title" value={task.title} onChange={handleChange} type="text" placeholder="Enter a task" className="p-2 rounded"/>
+                    {demand && <span className="p-4 font-medium bg-red-600 rounded-3xl">Task must contain more than 5 letters</span>}
                 </div>
                 <div>
                     <label className="mr-3 text-lg lg:text-xl">Select</label>
