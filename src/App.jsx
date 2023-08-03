@@ -6,10 +6,10 @@ import ContainCard from './components/ContainCard'
 import Footer from './components/Footer'
 
 function App() {
-  // variables
+  // variables useState's
   const [tasks, setTasks] = useState (JSON.parse(localStorage.getItem("tasks")) || [])
   const [option, setOption] = useState ("")
-  // funtions
+  // funtion's
   function addTask(task){
     localStorage.setItem("tasks", JSON.stringify([...tasks, task]))
     setTasks([...tasks, task])
@@ -38,7 +38,7 @@ function App() {
   }
 
   return (
-    <section className='bg-gradient-to-b from-[#ba4753] to-[#f8ced7] dark:from-[#f8ced7] dark:to-[#ba4753]'>
+    <section className='bg-[#ba4753] dark:bg-[#f8ced7]'>
       <DarkModeToggle/>
       <Header/>
       <FormContainer addTask={addTask} filter={filter}/>
