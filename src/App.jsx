@@ -9,6 +9,7 @@ function App() {
   // variables useState's
   const [tasks, setTasks] = useState (JSON.parse(localStorage.getItem("tasks")) || [])
   const [option, setOption] = useState ("")
+  
   // funtion's
   function addTask(task){
     localStorage.setItem("tasks", JSON.stringify([...tasks, task]))
@@ -32,7 +33,6 @@ function App() {
       }
       return task
     })
-
     localStorage.setItem("tasks", JSON.stringify(updatedTasks))
     setTasks(updatedTasks)
   }
@@ -41,7 +41,7 @@ function App() {
     <section className='bg-[#ba4753] dark:bg-[#f8ced7] font-mono'>
       <DarkModeToggle/>
       <Header/>
-      <FormContainer addTask={addTask} filter={filter}/>
+      <FormContainer tasks={tasks} addTask={addTask} filter={filter}/>
       <ContainCard tasks={tasks} option={option} deleteTask={deleteTask} changeTask={changeTask}/>
       <Footer/>
     </section>

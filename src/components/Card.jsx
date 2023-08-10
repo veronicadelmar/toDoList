@@ -18,7 +18,7 @@ export default function Card({title, id, deleteTask, changeTask, condition}){
     const styleIcon = (condition) => condition === "completed" ? checkComplete : condition === "incompleted" ? check : null
 
     return(
-        <section className="flex justify-center p-4 bg-[#fff] border-b-4">
+        <section className="w-[90%] flex self-center justify-center pt-4 bg-[#fff] border-b-4 lg:w-1/2">
             <figure>
                 <img src={xdBlack} alt="xD" className='w-9'/>
             </figure>
