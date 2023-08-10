@@ -1,5 +1,5 @@
 import Card from './Card'
-import Hook from '../assets/paper-Clip-Hook.png'
+import Clip from '../assets/paperClip.png'
 
 export default function ContainCard({tasks, option, deleteTask, changeTask}){
 
@@ -8,7 +8,7 @@ export default function ContainCard({tasks, option, deleteTask, changeTask}){
     return(
         <section className="mt-20 flex flex-col relative">
             <figure className="flex flex-col absolute self-center top-[-70px] z-[2]">
-                <img src={Hook} alt="Hook Papel" />
+                <img src={Clip} alt="Hook Papel" />
             </figure>
             <div className="w-[90%] flex flex-col self-center relative bg-[#fff] h-[40px] lg:w-1/2"></div>
                 {filteredTask &&
