@@ -1,7 +1,7 @@
 # To Do List xD
 
 ## Deploy
-
+https://to-do-list-wheat-iota.vercel.app/
 
 ## Technologies used to develop the app:
 -React + vite
