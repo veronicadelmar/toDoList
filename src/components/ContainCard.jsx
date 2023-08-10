@@ -1,4 +1,4 @@
-import Card from "./Card"
+import Card from './Card'
 import Hook from '../assets/paper-Clip-Hook.png'
 
 export default function ContainCard({tasks, option, deleteTask, changeTask}){

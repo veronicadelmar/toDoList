@@ -6,7 +6,7 @@
 ## Technologies used to develop the app:
 -React + vite
 -Jsx
--Install Tailwind css
+-Install Tailwind Css
 -Install React icons
 -Dark mode
 
