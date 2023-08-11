@@ -7,7 +7,7 @@ import {BsLinkedin} from 'react-icons/bs'
 
 export default function Footer(){
     return(
-        <footer className='p-5 lg:mt-40'>
+        <footer className='mt-20 p-5 lg:mt-40'>
             <figure className='hidden lg:flex lg:justify-end lg:mr-20'>
                 <img src={logoVg} alt="xD" className='w-1/6' />
             </figure>

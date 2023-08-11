@@ -6,7 +6,7 @@ export default function ContainCard({tasks, option, deleteTask, changeTask}){
     const filteredTask = option === "" ? tasks : tasks.filter(task => task.condition === option)
     
     return(
-        <section className="mt-20 flex flex-col relative">
+        <section className="flex flex-col relative">
             <figure className="flex flex-col absolute self-center top-[-70px] z-[2]">
                 <img src={Clip} alt="Hook Papel" />
             </figure>
